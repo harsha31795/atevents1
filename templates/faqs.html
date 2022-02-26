@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ATevents-Faq's</title>
+  <meta name="description" content=" &amp; Compare with fee, services &amp; Discounts they are offering. Check Wedding Planning Services with Atevents">
+  <meta name="keywords" content="Event Planners Vijayawada, Wedding Planners in Vijayawada, Birthday ,Planners cermony Vijayawada, newyear Planners wedding Vijayawada">
+  <meta name="robots" content="all">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="pbdate" content="8:04:53 25/01/2022">
+
+  
+  <link href="{% static 'assets/img/favico.png' %}" rel="icon">
+  <link href="{% static 'assets/img/favico.png' %}" rel="apple-touch-icon">
+
+ 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/faqs.css' %}" rel="stylesheet">
+
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity=
+"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity=
+"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+    </script>
+
+
+</head>
+
+<body>
+
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" >
+      <strong>message:</strong>{{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  {% endfor %}
+
+ 
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:atevents@gmail.com">atevents@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 80081 52458</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+
+ <header id="header" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div >
+      
+      <a href="{% url 'index' %}"><img src="../static/assets/img/logo.jpg" alt="logo" height="40%" width="40%"></a>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li class="dropdown"><a class="active" href=""><span>Get in Touch</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="{% url 'team' %}">AT-Team</a></li>
+            <li><a href="{% url 'terms' %}">Privacy/Refund policy</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+          </ul>
+        </li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'signout' %}">Signout</a></li>
+        <h1><li><a class="active" href="">Hello {{request.user.first_name}}</a></li></h1>
+
+        {% else %}
+
+          <li><a href="{% url 'signup' %}">Sign-Up</a></li>
+          <li><a href="{% url 'signin' %}">Login</a></li>
+
+          {% endif %}
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main id="main">
+
+    
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Faq's</li>
+        </ol>
+        <h2>Faq's</h2>
+      </div>
+    </section>
+            
+    <div class="container">
+        <div class="" id="accordion">
+            <div class="faqHeader">FAQ About AT-Event Management Company</div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What services do you offer?</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="card-block">
+                        We offer a <strong>event planning service</strong>. We’re able to find venues, organise catering, décor, accommodation, staffing, equipment and even hire speakers for <strong>corporate events</strong>. 
+                        We offer a tailor made service to fit your requirements. <strong> event is unique</strong> and we have the capacity to fulfill your requirements from start to finish. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">How Often Will We Meet?</a>
+                    </h4>
+                </div>
+                <div id="collapseTen" class="panel-collapse collapse">
+                    <div class="card-block">
+                        This is ideally answered at our initial meeting. We will build a schedule until we know what you want your event to be like. 
+                        We'll come up with an estimation for the total number of gatherings and time needed during the meeting to help you stay on track with your budget.
+                </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">How Do You Select Your Event Vendors?</a>
+                    </h4>
+                </div>
+                <div id="collapseEleven" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Along with our considerable experience with event organising and several other activities, we have developed strong relationships with a number of high-quality vendors in Coimbatore.
+                         A big part of our work is reviewing each vendor and making sure they're the best in their sectors and have all of the necessary approvals.
+                          We really like to partner with suppliers that are enjoyable to work with, as we think it helps the whole planning process go more seamlessly.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faqHeader"></div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Do You Provide Last Minute Event Management Services?</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Yes, is the simple answer? we are entirely comfortable functioning in a high-stress, last-minute environment, so don't hesitate to contact us if you need to organize a last-minute event. 
+                        We'll let you know if it's not practical, but our motto is that "there's always a way."
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Can I Just Get Your Help With One Aspect Of My Event?</a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Well, truly! We can manage all types of an event or include only the facilities you need for a specific event.
+                         Venue finding, onsite event management, event registration, event managed services, team bonding events, executive training sessions, and several other resources are available.
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">What are your areas of expertise?</a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We work from start to finish on both commercial and personal events. 
+                        These range from product launches, <strong>conferences</strong> and company award evenings to celebratory birthday, <strong>weddings and anniversary</strong> events. 
+                        We’ve worked across all business sectors and are happy to provide references and testimonials.
+                        <br />
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">What are your fees?</a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We will discuss all your event requirements before giving a quotation as obviously fees charged will depend on the scale and nature of the event, complexity of planning and our level of involvement. 
+                        We’ll keep in contact with you regarding our time, hours spent, and liaise with you on specific items, but we’ll also work to your budget and plan accordingly. 
+                        You’ll never be charged more than we agree upon and there will be no hidden extras or surprises.
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What are the payment options?</a>
+                    </h4>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse">
+                    <div class="card-block">
+                        The best way to transfer funds is via Paypal. This secure platform ensures timely payments and a secure environment. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Can you cope with last minute changes of plan or emergency situations?</a>
+                    </h4>
+                </div>
+                <div id="collapseNine" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We have extensive experience in dealing with the unexpected. We build in contingency measures for all our events and are constantly formulating plans to cope with emergency situations. Rest assured your event is always in the most capable hands.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faqHeader"></div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">How early do we need to start planning an event?</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Whilst this obviously depends on the size and nature of the event, we’d always advise you to start putting plans in place as early as possible.
+                         At certain times of year certain venues may need to be booked well in advance, as too with reputable suppliers and vendors.
+                          We advise handing over the reins to an event planner as soon as you’re aware of an event to be planned. 
+                          This gives us adequate time to factor in back up plans as well as leaving ample time to negotiate, plan and ensure everything’s in place for your big day. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">How do you keep budgets on track?</a>
+                    </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We are meticulous about keeping track of everything we need to spend money on. This is done by constant monitoring and updating <strong>spreadsheets</strong>, knowing where to prioritise spending and keeping aside a budget to cater for emergency contingencies.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <br><br><footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Our Newsletter</h4>
+            <p>Get the Updates of our prices and events subscribe:</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="{% url 'new' %}" method="post">
+              {% csrf_token %}
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'team' %}">AT-Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'terms' %}">Privacy/refund policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'faqs' %}">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              24-89, manipuram bridge down <br>
+              Guntur, (Dist.) 522001<br>
+              INDIA. <br><br>
+              <strong>Phone:</strong> +91 80081 52458<br>
+              <strong>Email:</strong><a href="mailto:atevents@gmail.com"> atevents@gmail.com</a><br>
+              <strong>Whatsapp:</strong><a href="https://api.whatsapp.com/send/?phone=%2B918008152458&text&app_absent=0" target="blank">Chat Here</a><br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About AT-events</h3>
+            <p style="text-align:justify">To keep our promise of consistently delivering the best, we have made sure that our team of staff are composed of only trained of the purpose professionals that are ready and able to assist you with all your need-from the preparation phase to the end of the event. Furthermore, to continue to achieve our goals,Rest assured, if you hire us today you won't be disappointed.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.skype.com/en/" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AT-Events</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+        Designed by <a href="https://google.com/">Pooja Developers</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

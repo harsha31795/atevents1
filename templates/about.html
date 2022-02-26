@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ATEevents-About</title>
+  <meta name="description" content=" &amp; Compare with fee, services &amp; Discounts they are offering. Check Wedding Planning Services with Atevents">
+  <meta name="keywords" content="Event Planners Vijayawada, Wedding Planners in Vijayawada, Birthday ,Planners cermony Vijayawada, newyear Planners wedding Vijayawada">
+  <meta name="robots" content="all">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="pbdate" content="8:04:53 25/01/2022">
+
+  
+  <link href="{% static 'assets/img/favico.png' %}" rel="icon">
+  <link href="{% static 'assets/img/favico.png' %}" rel="apple-touch-icon">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ 
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  {% for message in messages %}
+       <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" >
+           <strong>message:</strong>{{ message }}
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+        </button>
+       </div>
+       {% endfor %}
+
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:atevents@gmail.com">atevents@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 80081 52458</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+ <header id="header" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div >
+      <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo.jpg' %}" alt="logo" height="40%" width="40%"></a>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a class="active" href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li class="dropdown"><a href=""><span>Get in Touch</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="{% url 'team' %}">AT-Team</a></li>
+            <li><a href="{% url 'terms' %}">Privacy/Refund policy</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+          </ul>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+      <li><a href="{% url 'signout' %}">Signout</a></li>
+      <h1><li><a class="active" href="">Hello {{request.user.first_name}}</a></li></h1>
+
+      {% else %}
+
+        <li><a href="{% url 'signup' %}">Sign-Up</a></li>
+        <li><a href="{% url 'signin' %}">Login</a></li>
+
+        {% endif %}
+
+
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main id="main">
+
+    
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>About Us</li>
+        </ol>
+        <h2>About Us</h2>
+      </div>
+    </section>
+
+   
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'assets/img/events.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>What Does an Event Management Company Do?</h3>
+            <p class="fst-italic">
+              Running a successful event can be a complex and expensive exercise where the planning and management of every detail counts towards its success, which is reason alone to hire a specialist company. With this in mind, these are our top 6 reasons to use a professional event management company
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Creative Ideas.</li>
+              <li><i class="bi bi-check-circle"></i> Save Time and Money.</li>
+              <li><i class="bi bi-check-circle"></i> Access to Technology.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Risk.</li>
+              <li><i class="bi bi-check-circle"></i> Professional Event Delivery.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Your Budget .</li>
+            </ul>
+            <p>
+              he application of project management to the creation and development of large-scale events such as festivals, 
+              conferences, ceremonies, weddings, formal parties, concerts and conventions" which sounds reasonable if a little 
+              long-winded. Putting it more simply event management 
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Happy Clients</strong> Many for Us</p>
+              <a href="{% url 'services' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="242" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> We have done so far</p>
+              <a href="{% url 'gallery' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="965" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hours Of Support</strong>we give support 24/7  </p>
+              <a href="{% url 'contact' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hard Workers</strong> our Team who work hard</p>
+              <a href="{% url 'team' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>OUR Clients</h2>
+          <p style="text-align:justify">Many of the top companies are taken the our pride of our events and they became as our clients by giving Many of the events to conduct on behalf of them and we made it.some of them are given below:</p>
+        </div>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/1.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/2.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/3.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/4.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/5.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/6.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/7.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/8.jpg' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>A testimonial is a statement from a past customer that describes how a product or service helped them. Testimonials are often written by the business based on specific questions they ask satisfied customers. They usually show impact through before-and-after comparisons or provide specific improvement statistics.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/man.jpg' %}" class="testimonial-img" alt="">
+              <h3>Abdul</h3>
+              <h4>Ceo &amp; IBM Manager</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                I was impressed with your contributions in yesterday’s event . You participated in your group and you gave a masterful presentation that I’ve come to expect from you. You have such an easy, friendly style. 
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4 mt-lg-0">
+              <img src="{% static 'assets/img/testimonials/female1.jpg' %}" class="testimonial-img" alt="">
+              <h3>Harry</h3>
+              <h4>Cisco CEO</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Your willingness and ability to collaborate of your team done given massive success to event. Thank you for offering up your time to help others do their role better through your performance.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img src="{% static 'assets/img/testimonials/female2.jpg' %}" class="testimonial-img" alt="">
+              <h3>Varsha</h3>
+              <h4>KLU Secretary</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                It has been well organized with a perfect rhythm. I really enjoyed the talks from different continents. Thank you very much for your contribution. Thank you very much for organizing this wonderful conference, it was impressive and left me a very good memory.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+       
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img src="{% static 'assets/img/testimonials/female3.jpg' %}" class="testimonial-img" alt="">
+              <h3>Rosy</h3>
+              <h4>Govt employee</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                The team couldn’t help but be carried right along. I think you probably gave one of the smoothest, most interesting presentations I have ever heard.Amazing work in a really challenging situation within one week of conducting the event.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Our Newsletter</h4>
+            <p>Get the Updates of our prices and events subscribe:</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="{% url 'new' %}" method="post">
+              % csrf_token %}
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'team' %}">AT-Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'terms' %}">Privacy/refund policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'faqs' %}">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              24-89, manipuram bridge down <br>
+              Guntur, (Dist.) 522001<br>
+              INDIA. <br><br>
+              <strong>Phone:</strong> +91 80081 52458<br>
+              <strong>Email:</strong><a href="mailto:atevents@gmail.com"> atevents@gmail.com</a><br>
+              <strong>Whatsapp:</strong><a href="https://api.whatsapp.com/send/?phone=%2B918008152458&text&app_absent=0" target="blank">Chat Here</a><br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About AT-events</h3>
+            <p style="text-align:justify">To keep our promise of consistently delivering the best, we have made sure that our team of staff are composed of only trained of the purpose professionals that are ready and able to assist you with all your need-from the preparation phase to the end of the event. Furthermore, to continue to achieve our goals,Rest assured, if you hire us today you won't be disappointed.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.skype.com/en/" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AT-Events</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+        Designed by <a href="https://google.com/">Pooja Developers</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ 
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
